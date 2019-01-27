@@ -17,12 +17,12 @@ $ composer require dalsn/cashworx
 ## Usage
 
 ``` php
-$cashworx = new Dalsn\Cashworx();
+$cashworx = new Cashworx\Cashworx();
 ```
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/thephpleague/:package_name/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/dalsn/cashworx/blob/master/CONTRIBUTING.md) for details.
 
 ## Credits
 
