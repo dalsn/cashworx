@@ -18,14 +18,20 @@ class Cashworx
     /** @var string The instance token, settable once per new instance */
     private $instanceToken;
     private $time;
-    private $base_uri = env('CASHWORX_API_URL') . "/api/";
+    public $baseUrl = 'https://cashworxportal.com/api/';
 
     /**
      * @param string
      * @throws CashworxException When no token is provided
      */
-    public function __construct($access_key, $access_secret)
+    public function __construct($access_key, $access_secret, $baseUrl=null)
     {
+        if($baseUrl) {
+            if ($baseUrl[strlen($baseUrl) - 1] != '/')
+                $baseUrl .= '/';
+            $this->baseUrl = $baseUrl;
+        }
+
         $this->instanceToken = $this->getToken($access_key, $access_secret);
 
         if ($this->instanceToken)
