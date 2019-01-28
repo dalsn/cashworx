@@ -17,7 +17,7 @@ $ composer require dalsn/cashworx
 ## Usage
 
 ``` php
-$cashworx = new \Dalsn\Cashworx\Client(env('CASHWORX_ACCESS_KEY'), env('CASHWORX_ACCESS_SECRET'));
+$cashworx = new \Dalsn\Cashworx\Client($access_key, $access_secret, $apiUrl);
 
 Create Invoice
 $cashworx->createInvoice($invoice_data);
