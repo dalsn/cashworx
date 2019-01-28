@@ -48,7 +48,7 @@ class Cashworx
         ];
 
         $client = new GuzzleClient([
-            'base_uri' => $this->base_uri,
+            'base_uri' => $this->baseUrl,
         ]);
 
         $response = $this->response($client->post($url, ['form_params' => $credentials]));
@@ -66,7 +66,7 @@ class Cashworx
         $this->validateToken();
 
         $client = new GuzzleClient([
-            'base_uri' => $this->base_uri,
+            'base_uri' => $this->baseUrl,
             'headers' => [
                 'Authorization' => "Bearer " . $this->instanceToken,
                 'Content-Type' => "application/json"
@@ -80,7 +80,7 @@ class Cashworx
     {
         $url = "refresh";
         $client = new GuzzleClient([
-            'base_uri' => $this->base_uri,
+            'base_uri' => $this->baseUrl,
             'headers' => [
                 'Authorization' => "Bearer " . $this->instanceToken,
                 'Content-Type' => "application/json"
