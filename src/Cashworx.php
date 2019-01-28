@@ -3,11 +3,11 @@
 namespace Dalsn\Cashworx;
 
 use Exceptions\CashworxException;
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use Carbon\Carbon;
 
 /**
- * Class Cashworx
+ * Class Client
  *
  * The main class for API consumption
  *
@@ -18,8 +18,7 @@ class Cashworx
     /** @var string The instance token, settable once per new instance */
     private $instanceToken;
     private $time;
-    // private $base_uri = env('CASHWORX_API_URL') . "/api";
-    private $base_uri = "http://localhost:8000/api/";
+    private $base_uri = env('CASHWORX_API_URL') . "/api/";
 
     /**
      * @param string
@@ -42,7 +41,7 @@ class Cashworx
             'access_secret' => $secret
         ];
 
-        $client = new Client([
+        $client = new GuzzleClient([
             'base_uri' => $this->base_uri,
         ]);
 
@@ -60,7 +59,7 @@ class Cashworx
     {
         $this->validateToken();
 
-        $client = new Client([
+        $client = new GuzzleClient([
             'base_uri' => $this->base_uri,
             'headers' => [
                 'Authorization' => "Bearer " . $this->instanceToken,
@@ -74,7 +73,7 @@ class Cashworx
     private function refreshToken()
     {
         $url = "refresh";
-        $client = new Client([
+        $client = new GuzzleClient([
             'base_uri' => $this->base_uri,
             'headers' => [
                 'Authorization' => "Bearer " . $this->instanceToken,
