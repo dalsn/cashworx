@@ -93,6 +93,8 @@ class Cashworx
             $this->instanceToken = $response['data']['access_token'];
         else
             throw new CashworxException();
+
+        $this->time = Carbon::now('Africa/Lagos');
     }
 
     private function validateToken()
