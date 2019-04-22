@@ -18,7 +18,7 @@ class Cashworx
     /** @var string The instance token, settable once per new instance */
     private $instanceToken;
     private $time;
-    public $baseUrl = 'https://cashworxportal.com/api/';
+    public $baseUrl = 'https://api.cashworxportal.net/';
 
     /**
      * @param string

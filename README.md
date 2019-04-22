@@ -27,6 +27,12 @@ $cashworx->getInvoices();
 
 Confirm Payment
 $cashworx->getPayment($invoice_number);
+
+Get all Payments
+$cashworx->getPayments();
+
+Get Profile
+$cashworx->getProfile();
 ```
 
 ## Contributing
