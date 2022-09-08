@@ -24,12 +24,14 @@ $cashworx->getInvoice($invoice_number);
 
 Get all Invoices
 $cashworx->getInvoices();
+$cashworx->getInvoicesPaginated();
 
 Confirm Payment
 $cashworx->getPayment($invoice_number);
 
 Get all Payments
 $cashworx->getPayments();
+$cashworx->getPaymentsPaginated();
 
 Get Profile
 $cashworx->getProfile();
