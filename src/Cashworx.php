@@ -127,6 +127,17 @@ class Cashworx
     }
 
     /**
+     * [getInvoices Get all invoices (paginate)]
+     * @return [array]
+    */
+    public function getInvoicesPaginated($page = 1, $perPage = 50)
+    {
+        $url = "invoices/paginate?page=$page&perPage=$perPage";
+
+        return $this->request('get', $url);
+    }
+
+    /**
      * [getInvoice Get an invoice]
      * @param  [string] $invoice_number
      * @return [object]
@@ -145,6 +156,17 @@ class Cashworx
     public function getPayments()
     {
         $url = "payments";
+
+        return $this->request('get', $url);
+    }
+
+    /**
+     * [getPayments Get all payments (paginate)]
+     * @return [array]
+    */
+    public function getPaymentsPaginated($page = 1, $perPage = 50)
+    {
+        $url = "payments/paginate?page=$page&perPage=$perPage";
 
         return $this->request('get', $url);
     }
